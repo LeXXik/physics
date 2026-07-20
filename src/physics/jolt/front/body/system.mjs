@@ -50,11 +50,8 @@ class BodyComponentSystem extends ShapeComponentSystem {
     constructor(app, manager) {
         super(app, manager);
 
-        this.schema = [...this._schema, ...schema];
-    }
-
-    get id() {
-        return 'body';
+        this.id = 'body';
+        this._schema = [...super.schema, ...schema];
     }
 
     get ComponentType() {
