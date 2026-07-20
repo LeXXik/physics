@@ -57,15 +57,12 @@ class ShapeComponentSystem extends JoltComponentSystem {
     constructor(app, manager) {
         super(app, manager);
 
-        this._schema = [...this.schema, ...schema];
+        this.id = 'shape';
+        this._schema = [...super.schema, ...schema];
 
         // TODO
         // can we use static method directly?
         this.entityMap = ShapeComponentSystem.entityMap;
-    }
-
-    get id() {
-        return 'shape';
     }
 
     get ComponentType() {

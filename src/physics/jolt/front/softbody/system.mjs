@@ -52,11 +52,8 @@ class SoftBodyComponentSystem extends BodyComponentSystem {
     constructor(app, manager) {
         super(app, manager);
 
-        this._schema = [...this._schema, ...schema];
-    }
-
-    get id() {
-        return 'softbody';
+        this.id = 'softbody';
+        this._schema = [...super.schema, ...schema];
     }
 
     get ComponentType() {

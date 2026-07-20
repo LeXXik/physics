@@ -21,11 +21,8 @@ class ConstraintComponentSystem extends JoltComponentSystem {
     constructor(app, manager) {
         super(app, manager);
 
-        this._schema = [...this._schema, ...schema];
-    }
-
-    get id() {
-        return 'constraint';
+        this.id = 'constraint';
+        this._schema = [...super.schema, ...schema];
     }
 
     get ComponentType() {

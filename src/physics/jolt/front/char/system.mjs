@@ -55,13 +55,10 @@ class CharComponentSystem extends ShapeComponentSystem {
     constructor(app, manager) {
         super(app, manager);
 
-        this._schema = [...this._schema, ...schema];
+        this.id = 'char';
+        this._schema = [...super.schema, ...schema];
 
         this._exposeConstants();
-    }
-
-    get id() {
-        return 'char';
     }
 
     get ComponentType() {
